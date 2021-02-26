@@ -7,7 +7,7 @@ variable "mainVPCInstanceTenancy" {
 }
 
 variable "coreSNCIDRBlock" {
-  default = "10.0.0.1/24"
+  default = "10.0.0.0/24"
 }
 
 variable "coreSNMapPublicIp" {

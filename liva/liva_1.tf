@@ -125,7 +125,9 @@ resource "aws_security_group" "coreSG" {
 
 resource "aws_network_interface" "webserver_nwinterface" {
   subnet_id = aws_subnet.coreSubnet.id
-
+  security_groups = [
+    aws_security_group.coreSG.id
+  ]
   tags = {
     "environment" = "dev"
     "resource"    = "nwinterface-core"
@@ -140,7 +142,7 @@ resource "aws_key_pair" "forLiva" {
 }
 
 resource "aws_instance" "webserver" {
-  ami = "ami-00ddb0e5626798373"
+  ami = var.livaAMIId
   instance_type = "t2.micro"
 
   network_interface {

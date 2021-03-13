@@ -13,3 +13,7 @@ variable "coreSNCIDRBlock" {
 variable "coreSNMapPublicIp" {
   default = true
 }
+
+variable "livaAMIId" {
+  default = "ami-0aca41e2b01d8a1d3"
+}
